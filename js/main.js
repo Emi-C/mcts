@@ -22,14 +22,13 @@ $('#xmobmenu').click(function(){
 });
 
 //menu click
-/*$(".menu a").click(function(){
+$(".menu a").click(function(){
 	var target=$(this).attr('target');
 
 	$('html,body').animate({
         scrollTop: $("#"+target).offset().top-toppad()
     }, 700);
 });
-*/
 
 
 //menumob click
