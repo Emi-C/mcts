@@ -1,3 +1,10 @@
+function toppad(){
+    var ptop=$('.menu').css('height');
+    $('#landing').css('padding-top',ptop);
+    return parseInt(ptop.replace("px", ""))+100;
+}
+
+
 //cambio colore scroll menu
 $(document).ready(function(){
     $(window).scroll(function () {
@@ -153,6 +160,51 @@ $(window).scroll(function() {
 			console.log('ko');
 		});
 });*/
+
+
+//instagram
+$(document).ready(function(){
+	$.ajax({
+		method: 'get',
+		url: "./insta.php",
+		dataType: "json"
+	})
+
+	.done(function(data) {
+		$.each(data.items, function (i,v){
+			var pic=this.images.standard_resolution.url;
+			var like=this.likes.count;
+			var comms=this.comments.count;
+			var capt=this.caption.text;
+			var spazio = capt.indexOf(" ", 80);
+			if (spazio!=-1){capt=capt.substr(0,spazio)+"..."}
+			$('#instacont').append('<div class="col-md-3 col-sm-6 nopadding">'+
+      '<div class="instapic">'+
+        '<img class="img-responsive" src="'+pic+'">'+
+        '<p class="instmobinfo"><i class="fa fa-instagram"></i><span>'+like+' <i class="fa fa-heart"></i>    '+comms+' <i class="fa fa-comment"></i></span></p>'+
+        '<div class="instover">'+
+          '<h5 class="white">- MICHETTA\'S -</h5>'+
+          '<div class="likecomms">'+
+            '<div class="like"><i class="fa fa-heart"></i><br>'+like+'</div>'+
+            '<div class="comms"><i class="fa fa-comment"></i><br>'+comms+'</div>'+
+          '</div>'+
+          '<p class="instacapt">'+capt+'</p>'+
+        '</div>'+
+      '</div>'+
+    '</div>');
+		});
+	})
+
+	.fail(function() {
+		console.log('We couldn\'t get instagram feed');
+	});
+});
+
+
+$("#instacont").on("click",".instapic",function(){
+	window.open('https://www.instagram.com/michettas_panini_milano/', '_blank');
+});
+
 
 
 
