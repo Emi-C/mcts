@@ -104,6 +104,7 @@ hr.tall{
 }*/
 .cta{
 	display: inline-block;
+	margin:20px 0;
 	padding:20px;
 	color:#FEFAEF;
 	background:#c1aa5d;
@@ -111,6 +112,10 @@ hr.tall{
 	text-transform: uppercase;
 	font-size: 1.7rem;
 	cursor:pointer;
+}
+.cta:hover,.cta:focus{
+	color:#FEFAEF;
+	text-decoration: none;
 }
 .gold{
 	color:#c1aa5d;
@@ -404,6 +409,44 @@ background:rgba(255,255,255,.3);
 	background-attachment: fixed;
 }
 
+.pressimg{
+	height:300px;
+	background-size: cover;
+}
+.presstit{
+	text-transform: uppercase;
+}
+.cta.readmore{
+	font-size: 1rem;
+	padding:10px 20px;
+}
+
+.owl-theme .owl-nav{
+	position:absolute;
+	height: 4rem;
+	top:50%;
+	transform: translateY(-50%);
+	left:-20px;
+	right:-20px;
+}
+.owl-theme .owl-nav [class*=owl-]{
+	font-size:4rem;
+	color:#161407;
+	background: transparent;
+	padding:0;
+	margin:0;
+	position: absolute;
+}
+.owl-theme .owl-nav [class*=owl-]:hover{
+	color:#161407;
+	background: transparent;
+}
+.owl-carousel .owl-nav .owl-prev{
+left:-5%;
+}
+.owl-carousel .owl-nav .owl-next{
+right:-5%;
+}
 /*press*/
 
 
