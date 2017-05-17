@@ -18,12 +18,16 @@ $(document).ready(function(){
 });
 
 //menumob toggle
-$('#tgmobmenu').click(function(){
+$('.mobhead').on('click','.mobmenuspento',function(){
+  $(this).toggleClass("mobmenuspento");
+  $(this).toggleClass("mobmenuactive");
 	$("#mobmenu").css("height", "100vh");
 	$("body").css("overflow", "hidden");
 });
 
-$('#xmobmenu').click(function(){
+$('.mobhead').on('click','.mobmenuactive',function(){
+  $(this).toggleClass("mobmenuspento");
+  $(this).toggleClass("mobmenuactive");
 	$("#mobmenu").css("height", "0vh");
 	$("body").css("overflow", "auto");
 });
@@ -39,14 +43,13 @@ $(".menu a").click(function(){
 
 
 //menumob click
-/*$(".menumoblink a").click(function(){
+$(".menumoblink a").click(function(){
 	var target=$(this).attr('target');
-  $('#xmobmenu').click();
+  $('.mobhead .mobmenuactive').click();
 	setTimeout(function(){$('html,body').animate({
         scrollTop: $("#"+target).offset().top-toppad()
     }, 700)},700);
 });
-*/
 
 
 //SCROLLSPY menu

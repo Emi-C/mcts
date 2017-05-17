@@ -67,6 +67,9 @@ hr.tall{
 .nopadding{
     padding:0!important;
 }
+.small-push{
+	margin:20px 0;
+}
 .nomargin{
     margin:0!important;
 }
@@ -74,34 +77,6 @@ hr.tall{
     font-weight:bold;
     color:red;
 }
-/*
-.btn{
-    padding:10px 30px;
-    color:#FEFAEF;
-    background:#BDA22D;
-    font-size:1rem;
-    border-radius:0;
-    border:0;
-	transition: all .2s;
-}
-.btn:hover,.btn:focus{
-    color:#FEFAEF;
-    text-decoration:none;
-    outline:0!important;
-}
-.btn:hover{
-	background:#c1aa5d;
-}
-.btn:focus{
-	background:#BDA22D;
-    box-shadow:inset 0px 0px 10px #A48914;
-    -webkit-box-shadow:inset 0px 0px 10px #A48914;
-    -moz-box-shadow:inset 0px 0px 10px #A48914;
-    -o-box-shadow:inset 0px 0px 10px #A48914;
-}
-.btn.lg{
-	font-size:2rem;
-}*/
 .cta{
 	display: inline-block;
 	margin:20px 0;
@@ -166,8 +141,9 @@ h5{
 	text-transform: uppercase;
 	color:#161407;
 	display:inline-block;
-	padding:25px 15px;
-	transition: all .3s;
+	padding:30px 15px;
+	font-size:.8rem;
+	transition: all .15s;
 }
 .menulinks a:hover,.menulinks a:focus{
 	color: #c1aa5d;
@@ -186,51 +162,57 @@ h5{
 /*MENU*/
 
 /*menu mobile*/
+.mobhead{
+	z-index:100;
+}
 #tgmobmenu{
-padding:5px 11px;
-padding-top:6px;
+padding:0px 8px;
+padding-top:5px;
 font-size:2rem;
-background:#FEFAEF;
+background:transparent;
 cursor:pointer;
 color: #BDA22D;
 margin:10px;
-border:2px solid #FEFAEF;
+border:2px solid #161407;
 border-radius: 3px;
 display:inline-block;
+transition:all .5s;
+float:right;
 }
+#tgmobmenu.mobmenuactive{
+	background: #BDA22D;
+	color:#FEFAEF;
+}
+
 #mobmenu{
 height:0vh;
 width:100vw;
 position:fixed;
-z-index:100;
+z-index:99;
 overflow: hidden;
-background: #BDA22D;
+background:rgba(22,20,7,.85);
 color:#FEFAEF;
 transition:all .5s;
 }
-#xmobmenu{
-margin:10px;
-padding:5px 15px;
-font-size:2rem;
-cursor:pointer;
-border:2px solid #FEFAEF;
-border-radius: 3px;
-display: inline-block;
-font-weight:bold;
+.menumobcontent{
+	padding:20px;
+	padding-top:60px;
 }
-.menumoblink{
-margin-top:30px;
-font-size:2rem;
-padding:10px;
-}
+
 .menumoblink a{
+	margin-top:10px;
 display:block;
-text-transform: capitalize;
+font-size:1.8rem;
+text-transform: uppercase;
+text-decoration: underline;
 color:#FEFAEF;
-border-bottom:2px solid #FEFAEF;
 }
 .menumoblink a.active{
-background:rgba(255,255,255,.3);
+color: #BDA22D;
+}
+
+.menumobcontent .socialimg{
+	width:30px;
 }
 /*menu mobile*/
 
