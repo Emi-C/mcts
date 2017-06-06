@@ -288,3 +288,25 @@ $(".form").on("click",".btnform.ok",function(){
 		$(this).html("Error! Refresh the page");
 	});
 });
+
+
+//apertura menu
+$('.menublock').click(function(){
+  var blckid=$(this).attr("id").replace("ctamn","");
+	$('.overlay').addClass("active");
+	$('#mn'+blckid).addClass("active");
+	//$('#mn'+blckid).perfectScrollbar();
+  $('body').css("overflow","hidden");
+});
+$('.overlay').click(function(){
+	$('.overlay').removeClass("active");
+  //$('.sidemenu.active').perfectScrollbar('destroy');
+	$('.sidemenu.active').removeClass("active");
+	$('body').css("overflow","auto");
+});
+$('.chiudiside').click(function(){
+  $('.overlay').removeClass("active");
+  //$('.sidemenu.active').perfectScrollbar('destroy');
+	$('.sidemenu.active').removeClass("active");
+	$('body').css("overflow","auto");
+});

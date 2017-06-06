@@ -82,7 +82,7 @@ hr.tall{
 	margin:20px 0;
 	padding:20px;
 	color:#FEFAEF;
-	background:#c1aa5d;
+	background:#BDA22D;
 	border:2px solid #161407;
 	text-transform: uppercase;
 	font-size: 1.7rem;
@@ -93,7 +93,7 @@ hr.tall{
 	text-decoration: none;
 }
 .gold{
-	color:#c1aa5d;
+	color:#BDA22D;
 }
 .white,.white:hover,.white:focus{
     color:#FEFAEF;
@@ -146,12 +146,12 @@ h5{
 	transition: all .15s;
 }
 .menulinks a:hover,.menulinks a:focus{
-	color: #c1aa5d;
+	color: #BDA22D;
 	text-decoration: none;
 }
 .menulinks a.active{
 	transform: scale(1.1);
-	color: #c1aa5d;
+	color: #BDA22D;
 }
 
 @media screen and (max-width:1366px) {
@@ -283,6 +283,7 @@ color: #BDA22D;
 }
 
 .menublock{
+	cursor:pointer;
 	border:2px solid #bda22d;
 	height:170px;
 	position:relative;
@@ -604,3 +605,66 @@ color:#FEFAEF;
     outline:0;
 }
 /*MODAL*/
+
+
+/*side menu*/
+.sidemenu {
+    width: 0%;
+    height: 100%;
+    z-index: 100;
+    background: #161407;
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    transition: width .3s;
+}
+.sidemenu.alt{
+right:0;
+}
+
+.sidemenu.active{
+	width:100%
+}
+.sidecont{
+	width:80%;
+	margin-left:10%;
+}
+@media only screen and (min-width: 1200px){
+.sidemenu.active{
+	width:75%
+}
+.sidecont{
+	width:96%;
+	margin-left:2%;
+}
+}
+.sidecont{
+	width:80%;
+	margin-left:10%;
+}
+.sidemenu p{
+	color:#FEFAEF;
+}
+.chiudiside {
+    color: #fafafa;
+    opacity: .7;
+    cursor: pointer;
+    margin: 20px;
+    font-size: 2em;
+    text-align: right;
+    transition: all .3s;
+}
+.overlay {
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: #FEFAEF;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    transition: opacity .3s;
+}
+.overlay.active {
+    z-index: 99;
+    opacity: .9;
+}
