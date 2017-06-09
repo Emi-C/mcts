@@ -335,7 +335,11 @@ color: #BDA22D;
 .instmobinfo {
   display: none;
 }
+.instapic:hover .instover {
+    opacity: .95;
 }
+}
+
 .instmobinfo span {
   float: right;
 }
@@ -350,9 +354,6 @@ color: #BDA22D;
   transition: all .5s;
   padding: 20px 10px;
   text-align: center;
-}
-.instapic:hover .instover {
-    opacity: .95;
 }
 .mcsinstalogo {
   margin-bottom: 20px;
@@ -644,10 +645,11 @@ right:0;
 	height: 85%;
 	position:relative;
 overflow: hidden;
+padding:0 20px;
 }
 .sidemenu p{
 	color:#FEFAEF;
-	font-size:.7rem;
+	font-size:.75rem;
 }
 .chiudiside {
     color: #fafafa;
