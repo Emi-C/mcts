@@ -181,7 +181,8 @@ $(document).ready(function(){
 			var capt=this.caption.text;
 			var spazio = capt.indexOf(" ", 80);
 			if (spazio!=-1){capt=capt.substr(0,spazio)+"..."}
-			$('#instacont').append('<div class="col-md-3 col-sm-6 nopadding">'+
+      if (i>8){var discMob="hidden-xs"}else{var discMob=""}
+			$('#instacont').append('<div class="col-md-3 col-sm-6 '+discMob+' nopadding">'+
       '<div class="instapic">'+
         '<img class="img-responsive" src="'+pic+'">'+
         '<p class="instmobinfo"><i class="fa fa-instagram"></i><span>'+like+' <i class="fa fa-heart"></i>    '+comms+' <i class="fa fa-comment"></i></span></p>'+

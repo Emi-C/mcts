@@ -515,10 +515,16 @@ footer{
 .footp{
 color:#FEFAEF;
 }
-.socialimg{
+.sociallink{
 	display:inline-block;
 	width:50px;
+	height:50px;
 	margin-right:10px;
+	color:#161407;
+	background:#FEFAEF;
+	text-align:center;
+	font-size: 1.5rem;
+	padding-top:10px;
 }
 .logofoot{
 	padding:0 20px;
