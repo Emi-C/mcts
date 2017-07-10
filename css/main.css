@@ -224,8 +224,11 @@ color: #BDA22D;
 	height:100vh;
 	background:#BDA22D url('../img/full.jpg') center center no-repeat;
 	background-size: cover;
-	background-attachment: fixed;
-
+}
+@media screen and (min-width:1024px) {
+	.landing{
+		background-attachment: fixed;
+	}
 }
 .landing:before{
 	content:'';
@@ -282,7 +285,11 @@ color: #BDA22D;
 #menuhead{
 	background:#BDA22D url('../img/menu.jpg') center center no-repeat;
 	background-size: cover;
-	background-attachment: fixed;
+}
+@media screen and (min-width:1024px) {
+	#menuhead{
+		background-attachment: fixed;
+	}
 }
 
 .menublock{
@@ -321,7 +328,11 @@ color: #BDA22D;
 #galleryhead{
 	background:#BDA22D url('../img/gallery.jpg') center center no-repeat;
 	background-size: cover;
-	background-attachment: fixed;
+}
+@media screen and (min-width:1024px) {
+	#galleryhead{
+		background-attachment: fixed;
+	}
 }
 
 .instapic{
@@ -383,7 +394,11 @@ color: #BDA22D;
 #prenotahead{
 	background:#BDA22D url('../img/prenota.jpg') center center no-repeat;
 	background-size: cover;
-	background-attachment: fixed;
+}
+@media screen and (min-width:1024px) {
+	#prenotahead{
+		background-attachment: fixed;
+	}
 }
 
 /*prenota*/
@@ -393,7 +408,11 @@ color: #BDA22D;
 #presshead{
 	background:#BDA22D url('../img/press.jpg') center center no-repeat;
 	background-size: cover;
-	background-attachment: fixed;
+}
+@media screen and (min-width:1024px) {
+	#presshead{
+		background-attachment: fixed;
+	}
 }
 
 .pressimg{
@@ -441,9 +460,12 @@ right:-5%;
 #cateringhead{
 	background:#BDA22D url('../img/catering.jpg') center center no-repeat;
 	background-size: cover;
-	background-attachment: fixed;
 }
-
+@media screen and (min-width:1024px) {
+	#cateringhead{
+		background-attachment: fixed;
+	}
+}
 /*catering*/
 
 
@@ -451,7 +473,11 @@ right:-5%;
 #franchisehead{
 	background:#BDA22D url('../img/franchise.jpg') center center no-repeat;
 	background-size: cover;
-	background-attachment: fixed;
+}
+@media screen and (min-width:1024px) {
+	#franchisehead{
+		background-attachment: fixed;
+	}
 }
 
 /*franchise*/
@@ -462,7 +488,11 @@ right:-5%;
 #contattihead{
 	background:#BDA22D url('../img/contatti.jpg') center center no-repeat;
 	background-size: cover;
-	background-attachment: fixed;
+}
+@media screen and (min-width:1024px) {
+	#contattihead{
+		background-attachment: fixed;
+	}
 }
 
 input{
