@@ -1,3 +1,6 @@
+<?php
+include('dbclass.php');
+?>
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -437,8 +440,8 @@
                   <a target="chisiamo">chi siamo</a>
                   <a target="menu">menù</a>
                   <a target="gallery">gallery</a>
-                  <!--<a target="prenota">prenota un tavolo</a>-->
-                  <!--<a target="press">press</a>-->
+                  <a target="prenota">prenota un tavolo</a>
+                  <a target="press">press</a>
                   <a target="catering">catering</a>
                   <a target="franchise">apri un michetta's</a>
                   <a target="contatti">contatti</a>
@@ -468,8 +471,8 @@
                   <a target="chisiamo">chi siamo</a>
                   <a target="menu">menù</a>
                   <a target="gallery">gallery</a>
-                  <!--<a target="prenota">prenota un tavolo</a>-->
-                  <!--<a target="press">press</a>-->
+                  <a target="prenota">prenota un tavolo</a>
+                  <a target="press">press</a>
                   <a target="catering">catering</a>
                   <a target="franchise">apri un michetta's</a>
                   <a target="contatti">contatti</a>
@@ -552,7 +555,7 @@
 
 
         <!--prenota-->
-      <!--  <div id="prenotahead" class="sezhead">
+      <div id="prenotahead" class="sezhead">
           <div class="headcont">
             <h6 class="gold"><b>- MICHETTA'S -</b></h5>
             <h2 class="white">PRENOTA UN TAVOLO</h2>
@@ -561,20 +564,36 @@
 
         <div id="prenota" class="pd-top pd-bot">
           <div class="container">
-            <div class="row" style="height:500px;">
+            <div class="row">
               <div class="col-md-4 col-md-offset-1 col-sm-6">
-
+                <div class="" style="width:100%;height:250px;border:2px solid #161407"></div>
+                <select class="selContact" id="contora">
+                  <option value="12:00">12:00</option>
+                  <option value="12:30">12:30</option>
+                  <option value="12:00">13:00</option>
+                  <option value="12:30">13:30</option>
+                  <option value="12:00">14:00</option>
+                  <option value="19:00">19:00</option>
+                  <option value="19:30">19:30</option>
+                  <option value="20:00">20:00</option>
+                  <option value="20:30">20:30</option>
+                  <option value="21:00">21:00</option>
+                  <option value="21:30">21:30</option>
+                </select>
               </div>
               <div class="col-md-4 col-md-offset-2 col-sm-6">
-
+                <input type="text" id="contnome" class="txtCont" value="" placeholder="nome">
+                <input type="text" id="contmail" class="txtCont" value="" placeholder="e-mail">
+                <input type="text" id="conttel" class="txtCont" value="" placeholder="telefono">
+                <div class="btnform" id="subcont">invia prenotazione</div>
               </div>
             </div>
           </div>
-        </div>-->
+        </div>
 
 
         <!--press-->
-        <!--<div id="presshead" class="sezhead">
+        <div id="presshead" class="sezhead">
           <div class="headcont">
             <h6 class="gold"><b>- MICHETTA'S -</b></h5>
             <h2 class="white">PRESS</h2>
@@ -586,60 +605,26 @@
             <div class="row">
               <div class="col-xs-10 col-xs-offset-1">
                 <div class="owl-carousel owl-theme" id="pressCar">
+                  <?php
+                  $q = "select * from art order by pos limit 10";
+                  $res=mysqli_query($conn, $q);
+                  while ($row = mysqli_fetch_array($res, MYSQLI_ASSOC)) {
+                  ?>
                   <div>
-                    <div class="pressimg" style="background:url('img/gall.jpg') center center no-repeat;"></div>
-                    <a href="#"><h5 class="presstit">TITOLO PRESS PROVA</h5></a>
-                    <p class="presssub">CORRIERE DELLA SERA - APRILE 2017</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur
-    adipisicing elit, sed do eiusmod tempor incididunt
-    ut labore et dolore magna aliqua. Ut enim ad
-    minim veniam, quis  nostrud exercitation ullamco
-    laboris nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor in reprehenderit in....</p>
-    <a href="#" class="cta readmore">LEGGI DI PIù</a>
+                    <div class="pressimg" style="background:url('<?=$row["img"]?>') center center no-repeat;"></div>
+                    <a href="<?=$row["link"]?>"><h5 class="presstit"><?=$row["tit"]?></h5></a>
+                    <p class="presssub"><?=$row["info"]?></p>
+                    <p><?=$row["testo"]?></p>
+                    <a href="<?=$row["link"]?>" target="_blank" class="cta readmore">LEGGI DI PIù</a>
                   </div>
-                  <div>
-                    <div class="pressimg" style="background:url('img/gall.jpg') center center no-repeat;"></div>
-                    <a href="#"><h5 class="presstit">TITOLO PRESS PROVA</h5></a>
-                    <p class="presssub">CORRIERE DELLA SERA - APRILE 2017</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur
-    adipisicing elit, sed do eiusmod tempor incididunt
-    ut labore et dolore magna aliqua. Ut enim ad
-    minim veniam, quis  nostrud exercitation ullamco
-    laboris nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor in reprehenderit in....</p>
-    <a href="#" class="cta readmore">LEGGI DI PIù</a>
-                  </div>
-                  <div>
-                    <div class="pressimg" style="background:url('img/gall.jpg') center center no-repeat;"></div>
-                    <a href="#"><h5 class="presstit">TITOLO PRESS PROVA</h5></a>
-                    <p class="presssub">CORRIERE DELLA SERA - APRILE 2017</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur
-    adipisicing elit, sed do eiusmod tempor incididunt
-    ut labore et dolore magna aliqua. Ut enim ad
-    minim veniam, quis  nostrud exercitation ullamco
-    laboris nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor in reprehenderit in....</p>
-    <a href="#" class="cta readmore">LEGGI DI PIù</a>
-                  </div>
-                  <div>
-                    <div class="pressimg" style="background:url('img/gall.jpg') center center no-repeat;"></div>
-                    <a href="#"><h5 class="presstit">TITOLO PRESS PROVA</h5></a>
-                    <p class="presssub">CORRIERE DELLA SERA - APRILE 2017</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur
-    adipisicing elit, sed do eiusmod tempor incididunt
-    ut labore et dolore magna aliqua. Ut enim ad
-    minim veniam, quis  nostrud exercitation ullamco
-    laboris nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor in reprehenderit in....</p>
-    <a href="#" class="cta readmore">LEGGI DI PIù</a>
-                  </div>
-
+                  <?php
+                  }
+                  ?>
                 </div>
               </div>
             </div>
           </div>
-        </div>-->
+        </div>
 
 
 
@@ -675,7 +660,7 @@
           <div class="container">
             <div class="row center">
               <div class="col-md-12">
-                <p class="lead push-top"><b><i>Per informazioni riguardanti il Franchising Michetta’s Panini Milano, si prega di contattare:<a class="lead" href="mailto:franchising@michettas.com">franchising@michettas.com</a></b></i></p>
+                <p class="lead push-top"><b><i>Per informazioni riguardanti il Franchising Michetta’s Panini Milano, si prega di contattare: <a class="lead" href="mailto:franchising@michettas.com">franchising@michettas.com</a></b></i></p>
               </div>
             </div>
           </div>
@@ -769,7 +754,7 @@
     		<div id="totop"><i class="fa fa-arrow-up"></i></div>
 
     		<script src="js/vendor/jquery-1.11.2.min.js"></script>
-
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
         <script src="js/vendor/bootstrap.min.js"></script>
         <script src="js/vendor/owl.carousel.min.js"></script>
 
