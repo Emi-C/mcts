@@ -17,6 +17,7 @@ include('dbclass.php');
         <link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
         <link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700|Raleway:400,700,700i" rel="stylesheet">
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/datepicker.css">
         <link rel="stylesheet" href="css/owl.carousel.min.css">
         <link rel="stylesheet" href="css/owl.theme.default.min.css">
         <link rel="stylesheet" href="css/perfect-scrollbar.css">
@@ -26,6 +27,7 @@ include('dbclass.php');
     </head>
     <body>
         <div class="overlay"></div><!--menù michetta-->
+
         <div class="sidemenu" id="mn1">
           <div class="chiudiside"><i class="fa fa-times"></i></div>
           <div class="sidecont">
@@ -292,8 +294,6 @@ include('dbclass.php');
 
           </div>
         </div>
-
-
         <div class="sidemenu" id="mn3">
           <div class="chiudiside"><i class="fa fa-times"></i></div>
           <div class="sidecont">
@@ -430,8 +430,6 @@ include('dbclass.php');
         </div>
 
 
-
-
         <div id="mobmenu" class="hidden-md hidden-lg">
           <div class="menumobcontent center">
       			<div class="container">
@@ -566,7 +564,8 @@ include('dbclass.php');
           <div class="container">
             <div class="row">
               <div class="col-md-4 col-md-offset-1 col-sm-6">
-                <div class="" style="width:100%;height:250px;border:2px solid #161407"></div>
+                <div id="prenotacal" class="inbl"></div>
+                <input type="hidden"id="contdata" class="newdata" value="">
                 <select class="selContact" id="contora">
                   <option value="12:00">12:00</option>
                   <option value="12:30">12:30</option>
@@ -590,7 +589,6 @@ include('dbclass.php');
             </div>
           </div>
         </div>
-
 
         <!--press-->
         <div id="presshead" class="sezhead">
@@ -754,11 +752,16 @@ include('dbclass.php');
     		<div id="totop"><i class="fa fa-arrow-up"></i></div>
 
     		<script src="js/vendor/jquery-1.11.2.min.js"></script>
+
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+        <script src="/js/vendor/datepicker-it.js"></script>
+
         <script src="js/vendor/bootstrap.min.js"></script>
+
         <script src="js/vendor/owl.carousel.min.js"></script>
 
     		<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
     		<script src="js/vendor/perfect-scrollbar.jquery.min.js"></script>
 
 <script>
@@ -821,7 +824,25 @@ function initMap() {
     infowindowTwo.open(map, markerTwo);
   });
 }
+
+
+/*calendario*/
+function initCal(){
+  $("#prenotacal").datepicker({
+    //beforeShowDay: highlight,
+    onSelect:function (dateText){
+      $(this).next("input[class='newdata']").val(dateText);
+      $(this).next("input[class='newdata']").trigger('change');
+    }
+  });
+}
+
+$(document).ready(function(){initCal();});
+
     </script>
+
+
+
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHQqKr5-Ny4aRv-juVIrEbTNDyL_Cs_Nc&callback=initMap">
     </script>
 

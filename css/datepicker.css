@@ -1,0 +1,50 @@
+.hasDatepicker{
+  display: inline-block;
+  font-size:1.2rem;
+}
+.hasDatepicker tbody{
+text-align: right;
+}
+.hasDatepicker a, .hasDatepicker span{
+  font-size:1.2rem;
+}
+.hasDatepicker a{
+  color:#17457c;
+}
+.hasDatepicker a:hover,.hasDatepicker a:focus{
+  text-decoration: none;
+}
+.ui-datepicker-prev{
+  float:left;
+}
+.ui-datepicker-next{
+  float:right;
+}
+.hasDatepicker span.ui-icon{
+  font-weight:700;
+}
+.ui-datepicker-title{
+  text-align:center;
+  font-weight: 700;
+}
+
+.hasDatepicker td,.hasDatepicker th {
+    padding: 5px;
+}
+.hasDatepicker th {
+  color:#429321;
+}
+
+.highlight-date{
+  background:#17457c
+}
+.ui-datepicker-today{
+  background:#b4ed50
+}
+.ui-datepicker-current-day{
+  background:#429321
+}
+
+.hasDatepicker .ui-state-highlight,.hasDatepicker .ui-state-active,.hasDatepicker .highlight-date a{
+  color:#fdfdfd;
+}
