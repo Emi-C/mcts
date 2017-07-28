@@ -83,86 +83,6 @@ $(window).scroll(function() {
   $(".menu a[target]:eq("+index+")").addClass("active");
 });
 
-/*
-//SCROLLSPY menu MOBILE!
-$(window).scroll(function() {
-	//$('#landing').css("padding-top",mh+"px");
-
-	$(".menumoblink a").removeClass("active");
-	//get the divs offsets
-	var divs=[];
-	$( ".menumoblink a" ).each(function(i) {
-		var appo=$(this).attr("target");
-		divs[i]=$("#"+appo).offset().top;
-	});
-
-	//gets actual scroll and adds vh/2
-	var pos=($(window).scrollTop())-toppad();
-	var off=($(window).height())/7;
-
-	//if scroll is < vh/2 then we remove active class
-	if (pos<off){$( ".menumoblink a" ).removeClass("active"); return;}
-
-	pos=pos+off;
-
-	//gets the first div on actual scroll > div and sets its menu voice as active
-	var index=0;
-	for (index = 0; index < divs.length; index++) {
-		if (pos<divs[index]){
-			break;
-		}
-	}
-  $(".menumoblink a[target]:eq("+index+")").addClass("active");
-});
-*/
-
-
-//servizi immagini
-/*$(document).ready(function(){
-	$.ajax({
-		method: 'get',
-		url: "foto.php",
-		dataType:"json"
-	})
-
-	.done(function(data) {
-		$.each(data, function(i, e) {
-			var $item=$('<div class="col-md-3 col-sm-6"><div class="picevent" style="background:url(\''+e.img+'\') no-repeat center center;background-size:cover;"><a id="foto'+e.id+'" class="picover center" data-toggle="modal" data-target="#modServ"><p>'+e.tit+'</p></a></div></div>');
-			$('#serv'+e.cat+' .griglia').append( $item );
-		});
-	})
-
-	.fail(function() {
-		console.log('ko');
-	});
-});
-*/
-
-//modal foto
-/*$(".griglia").on('click','.picover',function() {
-	var fotoid=$(this).attr('id').replace("foto", "");
-	$.ajax({
-		method: 'get',
-		url: "foto.php",
-		data: {id:fotoid},
-		dataType: "json"
-	})
-
-		.done(function(data) {
-      $.each(data, function(i, e) {
-				$('.modal-title').html(e.tit);
-				$('#fotomodal').attr('src',e.img);
-				$('#fotoalt1').html(e.img1);
-				$('#fotoalt2').html(e.img2);
-				$('#fotoalt3').html(e.img3);
-				$('#modtxt').html(e.txt);
-		  });
-		})
-
-		.fail(function() {
-			console.log('ko');
-		});
-});*/
 
 
 //instagram
@@ -233,60 +153,62 @@ $('#totop').on('click', function() {
 
 
 
-//contatti
-$(".form #name").keyup(function() {
+//prenota
+$("#contdata").change(function() {
   checkForm();
 });
-$(".form #cog").keyup(function() {
+$("#contora").change(function() {
   checkForm();
 });
-$(".form #mail").keyup(function() {
+$("#contnome").keyup(function() {
   checkForm();
 });
-$(".form #msg").keyup(function() {
+$("#contmail").keyup(function() {
+  checkForm();
+});
+$("#conttel").keyup(function() {
   checkForm();
 });
 
+function validateEmail(email) { var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i; return re.test(email); }
+
 function checkForm(){
-	if ($(".form #name").val()==""){
-		$("#sbm").removeClass("ok");
+	if ($("#contdata").val()==""){
+		$("#subcont").removeClass("ok");
 		return 0;
 	}
-	if ($(".form #cog").val()==""){
-		$("#sbm").removeClass("ok");
+	if ($("#contnome").val()==""){
+		$("#subcont").removeClass("ok");
 		return 0;
 	}
-	if ($(".form #mail").val()==""){
-		$("#sbm").removeClass("ok");
+	if ($("#contmail").val()==""||!validateEmail($("#contmail").val())){
+		$("#subcont").removeClass("ok");
 		return 0;
 	}
-	if ($(".form #msg").val()==""){
-		$("#sbm").removeClass("ok");
+	if ($("#conttel").val()==""||$("#conttel").val().match(/\d/g).length<8){
+		$("#subcont").removeClass("ok");
 		return 0;
 	}
-	if (!$("#sbm").hasClass("ok")){
-		$("#sbm").addClass("ok");
-	}
-	if ($("#sbm").hasClass("error")){
-		$("#sbm").removeClass("error");
+	if (!$("#subcont").hasClass("ok")){
+		$("#subcont").addClass("ok");
 	}
 }
 
-$(".form").on("click",".btnform.ok",function(){
+$("#prenota").on("click",".btnform.ok",function(){
 	$.ajax({
 		url: "mailer.php",
 		method: "post",
-    data:{name:$(".form #name").val(),cog:$(".form #cog").val(),mail:$(".form #mail").val(),msg:$(".form #msg").val()}
+    data:{data:$("#contdata").val(),ora:$("#contora").val(),nome:$("#contnome").val(),mail:$("#contmail").val(),tel:$("#conttel").val()}
 	})
 	.done(function() {
 		$(this).removeClass("ok");
 		$(this).addClass("done");
-		$(this).html("Message sent!");
+		$(this).html("Grazie, ti aspettiamo!");
 	})
 	.fail(function() {
 		$(this).removeClass("ok");
 		$(this).addClass("error");
-		$(this).html("Error! Refresh the page");
+		$(this).html("Errore :(");
 	});
 });
 
@@ -311,3 +233,78 @@ $('.chiudiside').click(function(){
 	$('.sidemenu.active').removeClass("active");
 	$('body').css("overflow","auto");
 });
+
+
+/*calendario*/
+function initCal(){
+  $("#prenotacal").datepicker({
+    //beforeShowDay: highlight,
+    onSelect:function (dateText){
+      $(this).next("input[class='newdata']").val(dateText);
+      $(this).next("input[class='newdata']").trigger('change');
+    }
+  });
+}
+
+$(document).ready(function(){initCal();});
+
+
+
+$(document).ready(function() {
+	new WOW().init();
+
+  $("#pressCar").owlCarousel({
+    loop:true,
+    margin:20,
+    nav:true,
+    navText:['<i class="fa fa-caret-left"></i>','<i class="fa fa-caret-right"></i>'],
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:2
+        },
+        1000:{
+            items:3
+        }
+    }
+  });
+
+  $('#mn1 .sidecont').perfectScrollbar({suppressScrollX:true});
+  $('#mn2 .sidecont').perfectScrollbar({suppressScrollX:true});
+  $('#mn3 .sidecont').perfectScrollbar({suppressScrollX:true});
+  $('#mn4 .sidecont').perfectScrollbar({suppressScrollX:true});
+});
+
+function initMap() {
+  var place = {lat: 45.48173905, lng: 9.23363864};
+  var infowindow = new google.maps.InfoWindow({
+    content: '<p><b>Via Ambrogio Campiglio 13, 20133 Milano</b></p>'
+  });
+
+  var placeTwo = {lat: 45.487541, lng: 9.163014};
+  var infowindowTwo = new google.maps.InfoWindow({
+    content: '<p><b>Via Cenisio 55, 20154 Milano</b></p>'
+  });
+
+  var map = new google.maps.Map(document.getElementById('mapmcts'), {
+    zoom: 12,
+    center: {lat:45.465454, lng:9.186516}
+  });
+  var marker = new google.maps.Marker({
+    position: place,
+    map: map
+  });
+  marker.addListener('click', function() {
+    infowindow.open(map, marker);
+  });
+
+  var markerTwo = new google.maps.Marker({
+    position: placeTwo,
+    map: map
+  });
+  markerTwo.addListener('click', function() {
+    infowindowTwo.open(map, markerTwo);
+  });
+}

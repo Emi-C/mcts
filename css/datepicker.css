@@ -9,7 +9,7 @@ text-align: right;
   font-size:1.2rem;
 }
 .hasDatepicker a{
-  color:#17457c;
+  color:#161407;
 }
 .hasDatepicker a:hover,.hasDatepicker a:focus{
   text-decoration: none;
@@ -32,17 +32,15 @@ text-align: right;
     padding: 5px;
 }
 .hasDatepicker th {
-  color:#429321;
+  color:#BDA22D;
 }
 
-.highlight-date{
-  background:#17457c
-}
+
 .ui-datepicker-today{
-  background:#b4ed50
+  background:#c1aa5d
 }
 .ui-datepicker-current-day{
-  background:#429321
+  background:#BDA22D
 }
 
 .hasDatepicker .ui-state-highlight,.hasDatepicker .ui-state-active,.hasDatepicker .highlight-date a{

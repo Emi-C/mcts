@@ -1,8 +1,11 @@
-<?php$name=$_POST["name"];$cog=$_POST["cog"];
+<?
+$data=$_POST["data"];
+$ora=$_POST["ora"];
+$nome=$_POST["nome"];
 $mail=$_POST["mail"];
-$msg=$_POST["msg"];
+$tel=$_POST["tel"];
 
-$headers = "From: Michetta's <no-reply@michettas.it>"";
-echo $headers;
-$sent=mail( 'emil.costanzo@gmail.com', 'Nuovo messaggio da '.$name.' '.$cog.' - '.$mail, $msg, $headers);
-if ( !$sent ) {   http_response_code(400);} else {   http_response_code(200);}?>
+$headers = "From: Prenotazione Michetta's <".$mail.">";
+$sent=mail( 'info@michettas.com', 'Nuova prenotazione da '.$nome.' - '.$tel , 'Data: '.$data.' - Ora: '.$ora, $headers);
+if ( !$sent ) {   http_response_code(400);} else {   http_response_code(200);}
+?>

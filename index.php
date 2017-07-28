@@ -565,7 +565,7 @@ include('dbclass.php');
             <div class="row">
               <div class="col-md-4 col-md-offset-1 col-sm-6">
                 <div id="prenotacal" class="inbl"></div>
-                <input type="hidden"id="contdata" class="newdata" value="">
+                <input type="hidden" id="contdata" class="newdata" value="">
                 <select class="selContact" id="contora">
                   <option value="12:00">12:00</option>
                   <option value="12:30">12:30</option>
@@ -754,7 +754,7 @@ include('dbclass.php');
     		<script src="js/vendor/jquery-1.11.2.min.js"></script>
 
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-        <script src="/js/vendor/datepicker-it.js"></script>
+        <script src="js/vendor/datepicker-it.js"></script>
 
         <script src="js/vendor/bootstrap.min.js"></script>
 
@@ -763,84 +763,6 @@ include('dbclass.php');
     		<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 
     		<script src="js/vendor/perfect-scrollbar.jquery.min.js"></script>
-
-<script>
-
-$(document).ready(function() {
-	new WOW().init();
-
-  $("#pressCar").owlCarousel({
-    loop:true,
-    margin:20,
-    nav:true,
-    navText:['<i class="fa fa-caret-left"></i>','<i class="fa fa-caret-right"></i>'],
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:2
-        },
-        1000:{
-            items:3
-        }
-    }
-  });
-
-  $('#mn1 .sidecont').perfectScrollbar({suppressScrollX:true});
-  $('#mn2 .sidecont').perfectScrollbar({suppressScrollX:true});
-  $('#mn3 .sidecont').perfectScrollbar({suppressScrollX:true});
-  $('#mn4 .sidecont').perfectScrollbar({suppressScrollX:true});
-});
-
-function initMap() {
-  var place = {lat: 45.48173905, lng: 9.23363864};
-  var infowindow = new google.maps.InfoWindow({
-    content: '<p><b>Via Ambrogio Campiglio 13, 20133 Milano</b></p>'
-  });
-
-  var placeTwo = {lat: 45.487541, lng: 9.163014};
-  var infowindowTwo = new google.maps.InfoWindow({
-    content: '<p><b>Via Cenisio 55, 20154 Milano</b></p>'
-  });
-
-  var map = new google.maps.Map(document.getElementById('mapmcts'), {
-    zoom: 12,
-    center: {lat:45.465454, lng:9.186516}
-  });
-  var marker = new google.maps.Marker({
-    position: place,
-    map: map
-  });
-  marker.addListener('click', function() {
-    infowindow.open(map, marker);
-  });
-
-  var markerTwo = new google.maps.Marker({
-    position: placeTwo,
-    map: map
-  });
-  markerTwo.addListener('click', function() {
-    infowindowTwo.open(map, markerTwo);
-  });
-}
-
-
-/*calendario*/
-function initCal(){
-  $("#prenotacal").datepicker({
-    //beforeShowDay: highlight,
-    onSelect:function (dateText){
-      $(this).next("input[class='newdata']").val(dateText);
-      $(this).next("input[class='newdata']").trigger('change');
-    }
-  });
-}
-
-$(document).ready(function(){initCal();});
-
-    </script>
-
 
 
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHQqKr5-Ny4aRv-juVIrEbTNDyL_Cs_Nc&callback=initMap">
