@@ -563,7 +563,7 @@ include('dbclass.php');
         <div id="prenota" class="pd-top pd-bot">
           <div class="container">
             <div class="row">
-              <div class="col-md-4 col-md-offset-1 col-sm-6">
+              <div class="col-md-4 col-md-offset-1 col-sm-6 center">
                 <div id="prenotacal" class="inbl"></div>
                 <input type="hidden" id="contdata" class="newdata" value="">
                 <select class="selContact" id="contora">
