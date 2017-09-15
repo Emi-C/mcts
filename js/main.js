@@ -201,14 +201,14 @@ $("#prenota").on("click",".btnform.ok",function(){
     data:{data:$("#contdata").val(),ora:$("#contora").val(),nome:$("#contnome").val(),mail:$("#contmail").val(),tel:$("#conttel").val()}
 	})
 	.done(function() {
-		$(this).removeClass("ok");
-		$(this).addClass("done");
-		$(this).html("Grazie, ti aspettiamo!");
+		$("#prenota .btnform").removeClass("ok");
+		$("#prenota .btnform").addClass("done");
+		$("#prenota .btnform").html("Grazie, ti aspettiamo!");
 	})
 	.fail(function() {
-		$(this).removeClass("ok");
-		$(this).addClass("error");
-		$(this).html("Errore :(");
+		$("#prenota .btnform").removeClass("ok");
+		$("#prenota .btnform").addClass("error");
+		$("#prenota .btnform").html("Errore :(");
 	});
 });
 

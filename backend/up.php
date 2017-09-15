@@ -6,8 +6,8 @@ $lnk=str_replace("'","''",$_POST['lnk']);
 $txt=str_replace("'","''",$_POST['txt']);
 $img[0]=$_FILES['img'];
 
-//$uploaddir = '/backend/imgups/';
-$uploaddir = '/michettas/backend/imgups/';
+$uploaddir = '/backend/imgups/';
+//$uploaddir = '/michettas/backend/imgups/';
 $uploadfile[0] = $uploaddir . basename($img[0]['name']);
 
 
