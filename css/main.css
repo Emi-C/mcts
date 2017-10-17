@@ -339,6 +339,12 @@ color: #BDA22D;
 	cursor: pointer;
 	position: relative;
 	color: #FEFAEF;
+	width:24%;
+}
+@media (max-width: 991px){
+	.instapic{
+		width:48%;
+	}
 }
 .instmobinfo{
 	background: #BDA22D;
@@ -496,10 +502,11 @@ right:-5%;
 }
 
 .selContact{
-	width:100%;
+	width:45%;	
 	height:40px;
 	font-size:1.2rem;
 	margin:20px 0;
+	margin-right:15px;
 	border: 2px solid #161407;
 	border-radius: 0!important;
 	padding: 5px;

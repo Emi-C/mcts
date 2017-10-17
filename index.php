@@ -567,6 +567,7 @@ include('dbclass.php');
                 <div id="prenotacal" class="inbl"></div>
                 <input type="hidden" id="contdata" class="newdata" value="">
                 <select class="selContact" id="contora">
+				  <option value="">A che ora?</option>
                   <option value="12:00">12:00</option>
                   <option value="12:30">12:30</option>
                   <option value="12:00">13:00</option>
@@ -578,6 +579,19 @@ include('dbclass.php');
                   <option value="20:30">20:30</option>
                   <option value="21:00">21:00</option>
                   <option value="21:30">21:30</option>
+                </select>
+				<select class="selContact" id="contquanti">
+				  <option value="">Per quanti?</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>                  
                 </select>
               </div>
               <div class="col-md-4 col-md-offset-2 col-sm-6">
@@ -749,9 +763,9 @@ include('dbclass.php');
 
 
 
-    		<div id="totop"><i class="fa fa-arrow-up"></i></div>
+    	<div id="totop"><i class="fa fa-arrow-up"></i></div>
 
-    		<script src="js/vendor/jquery-1.11.2.min.js"></script>
+    	<script src="js/vendor/jquery-1.11.2.min.js"></script>
 
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
         <script src="js/vendor/datepicker-it.js"></script>
@@ -760,9 +774,12 @@ include('dbclass.php');
 
         <script src="js/vendor/owl.carousel.min.js"></script>
 
-    		<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 
-    		<script src="js/vendor/perfect-scrollbar.jquery.min.js"></script>
+    	<script src="js/vendor/perfect-scrollbar.jquery.min.js"></script>
+		
+    	<script src="js/vendor/masonry.pkgd.min.js"></script>
+    	<script src="js/vendor/imagesloaded.pkgd.min.js"></script>
 
 
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHQqKr5-Ny4aRv-juVIrEbTNDyL_Cs_Nc&callback=initMap">

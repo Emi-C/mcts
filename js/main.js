@@ -102,8 +102,7 @@ $(document).ready(function(){
 			var spazio = capt.indexOf(" ", 80);
 			if (spazio!=-1){capt=capt.substr(0,spazio)+"..."}
       if (i>8){var discMob="hidden-xs"}else{var discMob=""}
-			$('#instacont').append('<div class="col-md-3 col-sm-6 '+discMob+' nopadding">'+
-      '<div class="instapic">'+
+			$('#instacont').append('<div class="instapic '+discMob+'">'+
         '<img class="img-responsive" src="'+pic+'">'+
         '<p class="instmobinfo"><i class="fa fa-instagram"></i><span>'+like+' <i class="fa fa-heart"></i>    '+comms+' <i class="fa fa-comment"></i></span></p>'+
         '<div class="instover">'+
@@ -116,6 +115,11 @@ $(document).ready(function(){
         '</div>'+
       '</div>'+
     '</div>');
+		});
+		$('#instacont').imagesLoaded(function(){
+			$('#instacont').masonry({
+			  itemSelector: '.instapic'
+			});
 		});
 	})
 
@@ -160,6 +164,9 @@ $("#contdata").change(function() {
 $("#contora").change(function() {
   checkForm();
 });
+$("#contquanti").change(function() {
+  checkForm();
+});
 $("#contnome").keyup(function() {
   checkForm();
 });
@@ -174,6 +181,14 @@ function validateEmail(email) { var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\
 
 function checkForm(){
 	if ($("#contdata").val()==""){
+		$("#subcont").removeClass("ok");
+		return 0;
+	}
+	if ($("#contora").val()==""){
+		$("#subcont").removeClass("ok");
+		return 0;
+	}
+	if ($("#contquanti").val()==""){
 		$("#subcont").removeClass("ok");
 		return 0;
 	}
@@ -198,7 +213,7 @@ $("#prenota").on("click",".btnform.ok",function(){
 	$.ajax({
 		url: "mailer.php",
 		method: "post",
-    data:{data:$("#contdata").val(),ora:$("#contora").val(),nome:$("#contnome").val(),mail:$("#contmail").val(),tel:$("#conttel").val()}
+    data:{data:$("#contdata").val(),ora:$("#contora").val(),quanti:$("#contquanti").val(),nome:$("#contnome").val(),mail:$("#contmail").val(),tel:$("#conttel").val()}
 	})
 	.done(function() {
 		$("#prenota .btnform").removeClass("ok");
