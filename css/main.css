@@ -336,6 +336,7 @@ color: #BDA22D;
 }
 
 .instapic{
+	box-sizing:border-box;
 	cursor: pointer;
 	position: relative;
 	color: #FEFAEF;
@@ -343,7 +344,8 @@ color: #BDA22D;
 }
 @media (max-width: 991px){
 	.instapic{
-		width:48%;
+		width:43%;
+		margin:5px;
 	}
 }
 .instmobinfo{
