@@ -692,8 +692,7 @@ include('dbclass.php');
           <div class="container">
       			<div class="row">
               <div class="col-md-5 col-md-offset-1 col-sm-6 pd-top pd-bot">
-<h3 class="inbl left"><i class="fa fa-map-marker"></i>&nbsp;</h3><span class="left">&nbsp;<br>Via Ambrogio Campiglio 13, 20133 Milano</span><br>
-<div class="clearfix"></div>
+<h3 class="inbl"><i class="fa fa-map-marker"></i>&nbsp;</h3><span>Via Ambrogio Campiglio 13, 20133 Milano</span><br>
 <h3 class="inbl"><i class="fa fa-phone"></i>&nbsp;</h3><span>02 4547 8564</span><br>
 <h3 class="inbl"><i class="fa fa-envelope-o"></i>&nbsp;</h3><span><b>LAVORA CON NOI:</b> <a href="mailto:lavoraconnoi@michettas.com">lavoraconnoi@michettas.com</a></span><br>
 <h3 class="inbl"><i class="fa fa-envelope-o"></i>&nbsp;</h3><span><b>INFORMAZIONI:</b> <a href="mailto:info@michettas.com">info@michettas.com</a></span><br>
