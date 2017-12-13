@@ -591,7 +591,7 @@ include('dbclass.php');
                   <option value="7">7</option>
                   <option value="8">8</option>
                   <option value="9">9</option>
-                  <option value="10">10</option>                  
+                  <option value="10">10</option>
                 </select>
               </div>
               <div class="col-md-4 col-md-offset-2 col-sm-6">
@@ -692,7 +692,7 @@ include('dbclass.php');
           <div class="container">
       			<div class="row">
               <div class="col-md-5 col-md-offset-1 col-sm-6 pd-top pd-bot">
-<h3 class="inbl left"><i class="fa fa-map-marker"></i>&nbsp;</h3><span class="left">&nbsp;<br>Via Ambrogio Campiglio 13, 20133 Milano<br>Via Cenisio 55, 20154 Milano</span><br>
+<h3 class="inbl left"><i class="fa fa-map-marker"></i>&nbsp;</h3><span class="left">&nbsp;<br>Via Ambrogio Campiglio 13, 20133 Milano</span><br>
 <div class="clearfix"></div>
 <h3 class="inbl"><i class="fa fa-phone"></i>&nbsp;</h3><span>02 4547 8564</span><br>
 <h3 class="inbl"><i class="fa fa-envelope-o"></i>&nbsp;</h3><span><b>LAVORA CON NOI:</b> <a href="mailto:lavoraconnoi@michettas.com">lavoraconnoi@michettas.com</a></span><br>
@@ -777,7 +777,7 @@ include('dbclass.php');
     	<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 
     	<script src="js/vendor/perfect-scrollbar.jquery.min.js"></script>
-		
+
     	<script src="js/vendor/masonry.pkgd.min.js"></script>
     	<script src="js/vendor/imagesloaded.pkgd.min.js"></script>
 

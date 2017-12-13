@@ -298,14 +298,15 @@ function initMap() {
     content: '<p><b>Via Ambrogio Campiglio 13, 20133 Milano</b></p>'
   });
 
-  var placeTwo = {lat: 45.487541, lng: 9.163014};
+  /*var placeTwo = {lat: 45.487541, lng: 9.163014};
   var infowindowTwo = new google.maps.InfoWindow({
     content: '<p><b>Via Cenisio 55, 20154 Milano</b></p>'
-  });
+  });*/
 
   var map = new google.maps.Map(document.getElementById('mapmcts'), {
     zoom: 12,
-    center: {lat:45.465454, lng:9.186516}
+    //center: {lat:45.465454, lng:9.186516}
+    center: {lat: 45.48173905, lng: 9.23363864}
   });
   var marker = new google.maps.Marker({
     position: place,
@@ -315,11 +316,11 @@ function initMap() {
     infowindow.open(map, marker);
   });
 
-  var markerTwo = new google.maps.Marker({
+  /*var markerTwo = new google.maps.Marker({
     position: placeTwo,
     map: map
   });
   markerTwo.addListener('click', function() {
     infowindowTwo.open(map, markerTwo);
-  });
+  });*/
 }
