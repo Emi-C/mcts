@@ -199,7 +199,7 @@ transition:all .5s;
 }
 .menumobcontent{
 	padding:20px;
-	padding-top:60px;
+	padding-top:90px;
 }
 
 .menumoblink a{
@@ -504,7 +504,7 @@ right:-5%;
 }
 
 .selContact{
-	width:45%;	
+	width:45%;
 	height:40px;
 	font-size:1.2rem;
 	margin:20px 0;

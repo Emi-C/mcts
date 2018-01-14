@@ -26,9 +26,10 @@ include('dbclass.php');
 		    <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
+
         <div class="overlay"></div><!--menù michetta-->
 
-        <div class="sidemenu" id="mn1">
+        <!--<div class="sidemenu" id="mn1">
           <div class="chiudiside"><i class="fa fa-times"></i></div>
           <div class="sidecont">
             <div class="row push-bot">
@@ -428,7 +429,7 @@ include('dbclass.php');
 
           </div>
         </div>
-
+-->
 
         <div id="mobmenu" class="hidden-md hidden-lg">
           <div class="menumobcontent center">
@@ -436,7 +437,7 @@ include('dbclass.php');
       				<div class="row">
       					<div class="menumoblink center">
                   <a target="chisiamo">chi siamo</a>
-                  <a target="menu">menù</a>
+                  <!--<a target="menu">menù</a>-->
                   <a target="gallery">gallery</a>
                   <a target="prenota">prenota un tavolo</a>
                   <a target="press">press</a>
@@ -467,7 +468,7 @@ include('dbclass.php');
               <div class="col-md-10">
                 <div class="menulinks">
                   <a target="chisiamo">chi siamo</a>
-                  <a target="menu">menù</a>
+                  <!--<a target="menu">menù</a>-->
                   <a target="gallery">gallery</a>
                   <a target="prenota">prenota un tavolo</a>
                   <a target="press">press</a>
@@ -510,7 +511,7 @@ include('dbclass.php');
         </div>
 
         <!--menù-->
-        <div id="menuhead" class="sezhead">
+        <!--<div id="menuhead" class="sezhead">
           <div class="headcont">
             <h6 class="gold"><b>- MICHETTA'S -</b></h5>
             <h2 class="white">IL MENÙ</h2>
@@ -535,7 +536,7 @@ include('dbclass.php');
               </div>
             </div>
           </div>
-        </div>
+        </div>-->
 
         <!--gallery-->
         <div id="galleryhead" class="sezhead">
